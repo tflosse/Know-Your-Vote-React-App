@@ -30,7 +30,10 @@ ProPublica is an independent nonprofit newsroom that aims to produce investigati
 
     Accessible data includes:
 
-    - Member data: Along with general biographical information for current and past members of Congress, the API returns data about members’ Congressional roles. Role data includes the Congress number and chamber, as well as the member’s title, state and party. A single member may have more than one role in a particular Congress (for example, the member may switch parties or move from the House to the Senate). Member data is available for every member who has served in Congress, with more information for those who have served since 1995.
+    - Member data: Along with general biographical information for current and past members of Congress, the API returns data about members’ Congressional roles. 
+    Role data includes the Congress number and chamber, as well as the member’s title, state and party. 
+    A single member may have more than one role in a particular Congress (for example, the member may switch parties or move from the House to the Senate). 
+    Member data is available for every member who has served in Congress, with more information for those who have served since 1995.
     - Bill data: Along with standard bill summaries and details, the API returns bill subjects, amendments and related bills.
     - Lobbying data: The API returns data about filings from registered lobbyists.
 
@@ -131,7 +134,7 @@ The functionalities will then be divided into two separate lists: MPV and PostMV
 
 - Member details' pages will provide a list of recently sponsored Bills
 
--Allow user to export and send links
+- Allow user to export and send links
 
 - Create a Rep "Watch list" (undecided on this feature)
 
@@ -203,8 +206,7 @@ Unless otherwise noted, time is listed in hours:
 | Create sharing links and pop-up | L | ? |  |  |
 | User Form on Homepage | L | ? |  |  |
 | Render list of Sponsored Bills | L | 3 |  |  |
-| Render related lobbyist filings | L | 3 |  |  |
-| Additional features for search (progress bar, etc.) | L | 4 |  |  |
+| Additional features (progress bar, etc.) | L | 4 |  |  |
 | Additional styling | L | 4 |  |  |
 | Total | H | 40 | 6.3 | 6.3 |
 
