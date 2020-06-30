@@ -192,7 +192,7 @@ Unless otherwise noted, time is listed in hours:
 | Set up React structure and components | H | 1 | 1 | 1 |
 | Set up Navbar, Main Skeleton and Routes| H | 1.5 |  |  |
 | Research API resources | H | 2 | 3 | 3 |
-| Make Member API calls and inspect data structures | H | 1 | 2 | 2 |
+| Make API calls and inspect data structures | H | 1 | 2 | 2 |
 | Render lists, set up onToggle | H | 2 |  |  |
 | Style the lists and buttons | H | 1 |  |  |
 | Buttons for Individuals, onClick | H | 2 |  |  |
@@ -215,6 +215,8 @@ Unless otherwise noted, time is listed in hours:
 - ReactStrap - 
 - Material.io - 
 - Sass - 
+- Framer Motion
+    - Used to make the hamburger menu button fully adaptive by preserving its stroke width and its aspect ratio on active state, based on a Sandbox by [charliecm](https://codesandbox.io/s/hamburger-menu-with-framer-motion-iwxtp?file=/package.json)
 
 ## Code Snippet
 

@@ -1,38 +1,87 @@
 .App {
+  margin: 0 auto;
+  height: 100vh;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+}
+
+nav {
+  display: flex;
+  position: sticky;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: rgb(238,238,238);
+}
+
+nav img {
+  max-height: 100px;
+  position: absolute;
+  top: 5px;
+  left: 35%;
+  vertical-align: middle;
+  padding: 3px;
+  /* margin: 5px 20px 5px 0; */
+  display: inline-block;
+}
+nav a {
+  color: black;
+  font-family: 'Bebas Neue', cursive;
+  display: inline-block;
+  z-index: 10;
+  padding: 3px 12px;
+  font-size: 1.3em;
+  text-decoration: none;
+  border-radius: 10px;
+  -webkit-transition: all 0.5s;
+}
+nav #nav-about {
+  margin-right: 50px;
+}
+nav #nav-search {
+  margin-left: 50px;
+}
+.nav-options:hover {
+  color: whitesmoke;
+  background-color: rgba(54, 54, 54, 0.705);
+  transition: all 500ms ease;
+}
+
+/* .nav {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  transition: left 300ms ease;
+  text-align: right;
+  position: fixed;
+  top: 0;
+  right: -100vw;
+  background-color: rgba(255,255,255, 0.8);
+  padding: 20px;
+} */
+
+.about-div {
+  margin-top: 70px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.separator {
+  margin-top: 25px;
+  margin-bottom: 35px;
+  color: rgba(54, 54, 54, 0.705);
+  width: 15vw;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+button {
+  border: none;
+  font-family: 'Roboto Condensed', sans-serif;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+button .dem {
+  background-color: rgba(37, 136, 223, 0.8);
 }
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+button .rep {
+  background-color: rgba(212, 60, 60, 0.8);
 }
