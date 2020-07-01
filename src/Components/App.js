@@ -3,54 +3,59 @@ import {Route, Link, Switch, Redirect} from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import SearchState from "./Form/SearchState";
-import SearchName from "./Form/SearchName"; 
 import SearchResults from "./Form/SearchResults";
 import './App.css';
 // import styled, {css} from 'styled-components';
 
 
 function App() {
-  const [stateSearch, setStateSearch]= useState('')
-  const [chamberSearch, setChamberSearch]= useState('Senate')
+  const [stateSearch, setStateSearch]= useState('CA')
   const [stateResults, updateStateResults]= useState([])
-  const [nameResults, updateNameResults]= useState([])
 
   const handleChange = event => {
-    console.log('Handling state entry', event.target.value);
+    console.log('Handling state entry', event);
     const state =  event.target.value
     setStateSearch(state)
   };
 
-  const handleToggle = event => {
-    console.log('Handling chamber toggle');
-    event.preventDefault();
-    const chamber = event.target
-    setChamberSearch(chamber)
+
+  const senateApiCall = async () => {
+    const res = await fetch(`https://api.propublica.org/congress/v1/members/senate/${stateSearch}/current.json`,
+    {
+      dataType: "json",
+      headers: { "X-API-Key": "ZuPHJPB5SdYllQS7KY4cAVoLY6mdboxoc3nZLOcE" }
+    })
+    const json = await res.json()
+    let resultsArray = json.results
+    console.log(resultsArray)
+    updateStateResults(resultsArray)
   };
 
-  const handleSubmit = event => {
+  const handleSenateSubmit = event => {
       event.preventDefault();
-      console.log('State search submitted');
-      handleSubmit(stateSearch);
+      console.log('Senators search submitted');
+      senateApiCall()
       setStateSearch('')
   };
 
+  const houseApiCall = async () => {
+    const res = await fetch(`https://api.propublica.org/congress/v1/members/house/${stateSearch}/current.json`,
+    {
+      dataType: "json",
+      headers: { "X-API-Key": "ZuPHJPB5SdYllQS7KY4cAVoLY6mdboxoc3nZLOcE" }
+    })
+    const json = await res.json()
+    let resultsArray = json.results
+    console.log(resultsArray)
+    updateStateResults(resultsArray)
+  };
 
-  useEffect(() => {
-    const stateApiCall = async () => {
-      const res = await fetch(`https://api.propublica.org/congress/v1/members/${chamberSearch}/${stateSearch}/current.json`,
-      {
-        dataType: "json",
-        headers: { "X-API-Key": "ZuPHJPB5SdYllQS7KY4cAVoLY6mdboxoc3nZLOcE" }
-      })
-      const json = await res.json()
-      console.log(json)
-      let resultsArray = json.results
-      updateStateResults(resultsArray)
-    }
-    stateApiCall()
-  },[]);
-
+  const handleHouseSubmit = event => {
+      event.preventDefault();
+      console.log('House Reps search submitted');
+      houseApiCall()
+      setStateSearch('')
+  };
 
   return (
     <div className="App">
@@ -69,41 +74,43 @@ function App() {
           About
         </Link>
         <img src="https://i.imgur.com/2GuvUqT.png" alt="Congress Illustration"/>
-        <Link to="/bystate" 
+        <Link to="/senate" 
         className="dropdown-item nav-options"
         id="nav-search">
-          by State
+          Senate
         </Link>
-        <Link to="/byname" 
-        className="dropdown-item nav-options">
-          by Name
+        <Link to="/house" 
+        className="dropdown-item nav-options"
+        id="nav-search">
+          House
         </Link>
       </nav>
       <main>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/about" component={About} />
-          <Route exact path="/bystate" 
+          <Route path="/about" component={About} />
+          <Route path="/senate" 
           render={routerProps =>
-            <>
-              {/* <SearchName.js {...routerProps} /> */}
-              <SearchState.js {...routerProps} 
-                 handleChange={handleChange()}
-                 handleToggle={handleToggle()}
-                 handleSubmit={handleSubmit()}
-                 stateSearch={stateSearch}/> 
-              <SearchResults.js {...routerProps} 
+            <div>
+              <SearchState {...routerProps} 
+                 handleChange={handleChange}
+                 handleSubmit={handleSenateSubmit}
+                 stateSearch={stateSearch}
+                 value={"Seach Senators"}/> 
+              <SearchResults {...routerProps} 
                  stateResults={stateResults}/> 
-            </> } />
-          <Route path="/byname" 
+            </div> } />
+            <Route path="/house" 
           render={routerProps =>
-            <>
-              <SearchName.js {...routerProps}
-              // Props go here
-                  />
-              <SearchResults.js {...routerProps} 
-                nameResults={nameResults}/> 
-            </> } />
+            <div>
+              <SearchState {...routerProps} 
+                 handleChange={handleChange}
+                 handleSubmit={handleHouseSubmit}
+                 stateSearch={stateSearch}
+                 value={"Seach House Reps"}/> 
+              <SearchResults {...routerProps} 
+                 stateResults={stateResults}/> 
+            </div> } />
           <Route path="*" 
             render={()=> 
             <Redirect to="/home"/> } 

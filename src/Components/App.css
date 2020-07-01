@@ -75,33 +75,3 @@ nav #nav-search {
   width: 15vw;
 }
 
-.state-search-div, 
-.name-search-div {
-  display: inline-block;
-  padding: 20px;
-  margin-top: 100px;
-}
-
-.search-input {
-  height: 20px;
-  margin: 5px;
-}
-
-.search-div{
-  text-align: center;
-}
-
-.search-div ul {
-  list-style: none;
-}
-
-button {
-  border: none;
-  font-family: 'Roboto Condensed', sans-serif;
-}
-button .dem {
-  background-color: rgba(37, 136, 223, 0.8);
-}
-button .rep {
-  background-color: rgba(212, 60, 60, 0.8);
-}

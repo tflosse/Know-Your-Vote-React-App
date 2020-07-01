@@ -1,11 +1,12 @@
-import React, {useState} from "react";
+import React from "react";
+import "./Form.css";
 
 function SearchState (props) {
     return (
         <div className="state-search-div">
             <form onSubmit={props.handleSubmit}>
               <label>
-                  Search by State (two letter abbreviation)
+                  Search by State
               </label>
               <input
                 className='search-input'
@@ -17,14 +18,7 @@ function SearchState (props) {
               <input
                 className='search-input'  
                 type='submit'
-                value='Search Senate'
-                onToggle={props.handleToggle}
-              />
-              <input
-                className='search-input'  
-                type='submit'
-                value='Search House'
-                onToggle={props.handleToggle}
+                value={props.value}
               />
             </form>
         </div>

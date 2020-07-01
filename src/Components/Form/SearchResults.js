@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import "./Form.css";
 
 function SearchResults(props) {
 
@@ -12,9 +13,9 @@ function SearchResults(props) {
         )
       });
     return (
-        <div>
+        <div className="search-div">
             <h3>Search Results</h3>
-            <div>{resultsList}</div>
+            <div className="search-results">{resultsList}</div>
         </div>
     )
 }

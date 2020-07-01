@@ -1,0 +1,38 @@
+.search-div{
+    margin: 0 auto;
+    height: 100vh;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    text-align: center;
+  }
+
+.state-search-div {
+  display: inline-block;
+  padding: 10px;
+  margin-top: 90px;
+}
+
+.search-input {
+  height: 25px;
+  margin: 8px;
+}
+
+.search-div{
+  text-align: center;
+}
+
+.search-div ul {
+  list-style: none;
+}
+
+button {
+  border: none;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+button .dem {
+  background-color: rgba(37, 136, 223, 0.8);
+}
+button .rep {
+  background-color: rgba(212, 60, 60, 0.8);
+}
