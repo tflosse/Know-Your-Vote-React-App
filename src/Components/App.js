@@ -9,7 +9,7 @@ import './App.css';
 
 
 function App() {
-  const [stateSearch, setStateSearch]= useState('CA')
+  const [stateSearch, setStateSearch]= useState('')
   const [stateResults, updateStateResults]= useState([])
 
   const handleChange = event => {
@@ -111,6 +111,10 @@ function App() {
               <SearchResults {...routerProps} 
                  stateResults={stateResults}/> 
             </div> } />
+            {/* <Route path="/member/:id"
+              render={routerProps =>
+                <MemberDetails {...routerProps} 
+                /> } /> */}
           <Route path="*" 
             render={()=> 
             <Redirect to="/home"/> } 

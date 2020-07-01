@@ -18,12 +18,14 @@
   margin: 8px;
 }
 
-.search-div{
+.results-div{
   text-align: center;
-}
-
-.search-div ul {
-  list-style: none;
+  /* display: flex;
+  flex-direction: column;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  flex-wrap: nowrap;
+  justify-content: space-evenly; */
 }
 
 button {

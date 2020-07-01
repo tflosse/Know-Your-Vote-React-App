@@ -98,9 +98,9 @@ subcommittees: Array[8]
 
 Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. Also, define the the React components and the architectural design of your app.
 
-- [add link to your wireframes]()
+![Simplified Wireframes](https://i.imgur.com/pcnVlyp.png)
 
-- [add link to your react architecture]()
+![React architecture & API Calls](https://i.imgur.com/NXX21Sv.png)
 
 
 

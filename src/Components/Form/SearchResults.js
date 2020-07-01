@@ -13,7 +13,7 @@ function SearchResults(props) {
         )
       });
     return (
-        <div className="search-div">
+        <div className="results-div">
             <h3>Search Results</h3>
             <div className="search-results">{resultsList}</div>
         </div>
