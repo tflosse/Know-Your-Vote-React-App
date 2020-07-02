@@ -38,12 +38,12 @@ function SponsBills(props) {
     let bills = billsList.map((bill, i) => {
         return (
             <div key={bill.bill_id}>
-                <h4>{bill.short_title}</h4>
-                <h5>Introduced on: {bill.introduced_date}<br />
-                {bill.committees}</h5>
-                <p>{bill.primary_subject}<br />
-                {bill.summary? `${bill.summary}`:"Bill Summary Unavailable"}</p>
-                <a target="_blank" rel="noopener noreferrer" href={`${bill.congressdotgov_url}`}>Read more...</a>
+                <h4>{bill.committees}<br />
+                Introduced on: {bill.introduced_date}</h4>
+                <p className="bill-subject">{bill.primary_subject}</p>
+                <p className="short-title">{bill.short_title}</p>
+                <p className="bill-summary">{bill.summary? `${bill.summary}`:"Bill Summary Unavailable"}</p>
+                <a className="bill-link" target="_blank" rel="noopener noreferrer" href={`${bill.congressdotgov_url}`}>Read more</a>
                 <hr />
             </div>
         )

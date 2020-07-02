@@ -6,6 +6,7 @@ function MemberDetails(props) {
 
 const [memberDetails, updateMemberDetails]= useState({})
 const [memberRole, setMemberRole]= useState({})
+// const [committees, updateCommittees]= ([])
 
   useEffect(() => {
     const memberApiCall = async () => {
@@ -18,8 +19,10 @@ const [memberRole, setMemberRole]= useState({})
       const json = await res.json()
       let resultsObject = json.results[0]
       let role = json.results[0].roles[0]
+    //   let comm = json.results[0].roles[0].committees
       updateMemberDetails(resultsObject)
       setMemberRole(role)
+    //   updateCommittees(comm)
     }
     memberApiCall()
   }, []); 
@@ -33,7 +36,7 @@ const [memberRole, setMemberRole]= useState({})
         return ("Other")
     }
   };
- currentParty()
+ currentParty();
 
  const memberID = memberDetails.id
 
@@ -41,12 +44,21 @@ console.log('memberID -', memberID)
 console.log('memberDetails -', memberDetails)
 console.log('memberRole -', memberRole)
 
+// const committeesList = committees.map(e => {
+//     return (
+//     <li>{e.name}</li>
+//     )
+// });
+
     return (
       <div className="member-info">
         <h3 id="member-name">{memberRole.short_title} {memberDetails.first_name} {memberDetails.last_name}</h3>
         <p>{currentParty(memberDetails.current_party)}<br />
         In role since: {memberRole.start_date}<br />
         Next election: {memberRole.next_election}</p><br />
+        {/* <ul className="committees">
+            {committeesList}
+        </ul> */}
         <div className="member-links">
             {/* URL for the contact form and phone number below are contained in "roles" array*/}
             <a target="_blank" rel="noopener noreferrer" href={`${memberDetails.url}`}>

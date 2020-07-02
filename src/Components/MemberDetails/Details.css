@@ -9,8 +9,9 @@
     font-size: 0.8rem;
     font-style: italic;
 }
+
 .member-links {
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .member-links a {
@@ -30,10 +31,12 @@
     font-family: 'Bebas Neue', cursive;
     font-size: 1.1rem;
     padding: 5px 8px;
+    margin-bottom: 30px;
     border: none;
     border-radius: 5px;
     -webkit-transition: all 0.5s;
 }
+
 .member-bills button:hover {
     color: whitesmoke;
     background-color: rgba(54, 54, 54, 0.705);
@@ -47,4 +50,30 @@
 .shown {
     text-align: center;
     display: inline-block;
+    margin: 0 30px;
 }
+
+.bill-subject {
+
+}
+
+.short-title {
+    font-size: 0.9rem;
+}
+
+.bill-summary {
+    font-style: italic;
+    font-size: 0.8rem;
+}
+
+.bill-link {
+    text-decoration: none;
+    color: rgb(63, 58, 58);
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1rem;
+}
+
+ hr {
+    margin: 40px auto;
+    width: 50vw;
+ }
