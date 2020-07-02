@@ -1,40 +1,68 @@
 .search-div{
     margin: 0 auto;
-    height: 100vh;
     position: relative;
     font-family: 'Poppins', sans-serif;
     font-size: 15px;
     text-align: center;
+    padding: 10px;
+    margin-top: 80px;
   }
 
-.state-search-div {
-  display: inline-block;
-  padding: 10px;
-  margin-top: 90px;
-}
-
 .search-input {
-  height: 25px;
-  margin: 8px;
+    height: 25px;
+    margin: 8px;
 }
 
-.results-div{
-  text-align: center;
-  /* display: flex;
-  flex-direction: column;
-  overflow-y: scroll;
-  scroll-behavior: smooth;
-  flex-wrap: nowrap;
-  justify-content: space-evenly; */
+#submit-search {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.1rem;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 5px;
+    -webkit-transition: all 0.5s;
+}
+#submit-search:hover {
+    color: whitesmoke;
+    background-color: rgba(54, 54, 54, 0.705);
+    transition: all 0.4s ease;
 }
 
-button {
-  border: none;
-  font-family: 'Roboto Condensed', sans-serif;
+.results-div {
+    text-align: center;
+    margin-top: 60px;
 }
-button .dem {
-  background-color: rgba(37, 136, 223, 0.8);
+.search-results {
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    justify-content: space-evenly;
 }
-button .rep {
-  background-color: rgba(212, 60, 60, 0.8);
+
+.dem, .rep {
+    width: 30vw;
+    padding: 10px 25px;
+    margin: 5px;
+    border-radius: 5px;
+    -webkit-transition: all 0.5s;
+}
+.dem a , .rep a {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.dem a:hover, .rep a:hover {
+    font-size: 1.2rem;
+}
+.dem:hover {
+    background-color: rgba(80, 172, 252, 0.5);
+    font-size: 1.1rem;
+    transition: all 0.4s ease;
+}
+.rep:hover {
+    background-color: rgba(212, 60, 60, 0.5);
+    font-size: 1.1rem;
+    transition: all 0.4s ease;
 }

@@ -1,9 +1,10 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {Route, Link, Switch, Redirect} from "react-router-dom";
 import Home from "./Home";
 import About from "./About";
 import SearchState from "./Form/SearchState";
 import SearchResults from "./Form/SearchResults";
+import MemberDetails from "./MemberDetails/MemberDetails";
 import './App.css';
 // import styled, {css} from 'styled-components';
 
@@ -17,7 +18,6 @@ function App() {
     const state =  event.target.value
     setStateSearch(state)
   };
-
 
   const senateApiCall = async () => {
     const res = await fetch(`https://api.propublica.org/congress/v1/members/senate/${stateSearch}/current.json`,
@@ -67,22 +67,22 @@ function App() {
           className="mobile-nav hamburger" 
           onClick={() => setOpen(!isOpen)}>
           ☵</button>
-        <button className="mobile-nav close">X</button> */}
-        <Link to="/about" 
-        className="dropdown-item nav-options"
-        id="nav-about">
-          About
-        </Link>
-        <img src="https://i.imgur.com/2GuvUqT.png" alt="Congress Illustration"/>
+        <button className="mobile-nav close">X</button> */}        
         <Link to="/senate" 
         className="dropdown-item nav-options"
         id="nav-search">
-          Senate
+          Senate 
         </Link>
+        <img src="https://i.imgur.com/2GuvUqT.png" alt="Congress Illustration"/>
         <Link to="/house" 
         className="dropdown-item nav-options"
         id="nav-search">
           House
+        </Link>
+        <Link to="/about" 
+        className="dropdown-item nav-options"
+        id="nav-about">
+          About
         </Link>
       </nav>
       <main>
@@ -97,8 +97,10 @@ function App() {
                  handleSubmit={handleSenateSubmit}
                  stateSearch={stateSearch}
                  value={"Seach Senators"}/> 
+              {stateResults?
               <SearchResults {...routerProps} 
-                 stateResults={stateResults}/> 
+                 stateResults={stateResults}
+                 stateSearch={stateSearch}/>:<h4>{"Please enter a valid two-letter state abbriviation."}</h4>}
             </div> } />
             <Route path="/house" 
           render={routerProps =>
@@ -108,13 +110,15 @@ function App() {
                  handleSubmit={handleHouseSubmit}
                  stateSearch={stateSearch}
                  value={"Seach House Reps"}/> 
+              {stateResults?
               <SearchResults {...routerProps} 
-                 stateResults={stateResults}/> 
+                 stateResults={stateResults}
+                 stateSearch={stateSearch}/>:<h4>{"Please enter a valid two-letter state abbriviation."}</h4>}
             </div> } />
-            {/* <Route path="/member/:id"
+            <Route path="/member/:id"
               render={routerProps =>
                 <MemberDetails {...routerProps} 
-                /> } /> */}
+                /> } />
           <Route path="*" 
             render={()=> 
             <Redirect to="/home"/> } 

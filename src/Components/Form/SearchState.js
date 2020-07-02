@@ -3,7 +3,7 @@ import "./Form.css";
 
 function SearchState (props) {
     return (
-        <div className="state-search-div">
+        <div className="search-div">
             <form onSubmit={props.handleSubmit}>
               <label>
                   Search by State
@@ -16,7 +16,7 @@ function SearchState (props) {
                 onChange={props.handleChange}
               />
               <input
-                className='search-input'  
+                id='submit-search'  
                 type='submit'
                 value={props.value}
               />

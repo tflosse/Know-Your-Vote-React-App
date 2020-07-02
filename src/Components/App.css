@@ -7,6 +7,7 @@
 }
 
 nav {
+  box-sizing: border-box;
   display: flex;
   position: sticky;
   justify-content: space-between;
@@ -15,43 +16,9 @@ nav {
   background-color: rgb(238,238,238);
 }
 
-nav img {
-  max-height: 100px;
-  position: absolute;
-  top: 5px;
-  left: 35%;
-  vertical-align: middle;
-  padding: 3px;
-  /* margin: 5px 20px 5px 0; */
-  display: inline-block;
-}
-nav a {
-  color: black;
-  font-family: 'Bebas Neue', cursive;
-  display: inline-block;
-  z-index: 10;
-  padding: 3px 12px;
-  font-size: 1.3em;
-  text-decoration: none;
-  border-radius: 10px;
-  -webkit-transition: all 0.5s;
-}
-nav #nav-about {
-  margin-right: 50px;
-}
-nav #nav-search {
-  margin-left: 50px;
-}
-.nav-options:hover {
-  color: whitesmoke;
-  background-color: rgba(54, 54, 54, 0.705);
-  transition: all 500ms ease;
-}
-
-/* .nav {
+/* .mobile-nav {
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
   width: 100vw;
   height: 100vh;
   transition: left 300ms ease;
@@ -63,11 +30,43 @@ nav #nav-search {
   padding: 20px;
 } */
 
-.about-div {
+nav img {
+  max-height: 100px;
+  position: absolute;
+  top: 5px;
+  left: 37%;
+  vertical-align: middle;
+  padding: 3px;
+  /* margin: 5px 20px 5px 0; */
+  display: inline-block;
+}
+nav a, .nav-options {
+  color: black;
+  font-family: 'Bebas Neue', cursive;
+  display: inline-block;
+  z-index: 10;
+  padding: 3px 12px;
+  font-size: 1.3em;
+  text-decoration: none;
+  border-radius: 10px;
+  -webkit-transition: all 0.5s;
+}
+
+.nav-options:hover {
+  color: whitesmoke;
+  background-color: rgba(54, 54, 54, 0.705);
+  transition: all 0.4 ease;
+}
+
+.about-div, .home-div {
+  margin: 30px;
   margin-top: 70px;
   text-align: center;
 }
-
+.constit-quote {
+  font-style: italic;
+  font-size: 0.9rem;;
+}
 .separator {
   margin-top: 25px;
   margin-bottom: 35px;
@@ -75,3 +74,6 @@ nav #nav-search {
   width: 15vw;
 }
 
+h4 {
+  text-align: center;
+}

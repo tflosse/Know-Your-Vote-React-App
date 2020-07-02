@@ -1,0 +1,50 @@
+.member-info {
+    margin: 0 auto;
+    margin-top: 80px;
+    position: relative;
+    text-align: center;
+}
+
+#updated {
+    font-size: 0.8rem;
+    font-style: italic;
+}
+.member-links {
+    margin-top: 50px;
+}
+
+.member-links a {
+    text-decoration: none;
+    color: black;
+    font-size: 1rem;
+    margin-top: 30px;
+}
+
+.member-links > a > svg {
+    display: inline-block;
+    width: 20px;
+    padding: 0 10px;
+}
+
+.member-bills button {
+    font-family: 'Bebas Neue', cursive;
+    font-size: 1.1rem;
+    padding: 5px 8px;
+    border: none;
+    border-radius: 5px;
+    -webkit-transition: all 0.5s;
+}
+.member-bills button:hover {
+    color: whitesmoke;
+    background-color: rgba(54, 54, 54, 0.705);
+    transition: all 0.4s ease;
+}
+
+.hidden {
+    display: none;
+}
+
+.shown {
+    text-align: center;
+    display: inline-block;
+}

@@ -6,15 +6,19 @@ function SearchResults(props) {
 
     let resultsList = props.stateResults.map((member, i) => {
         return (
-          <div key={member.id}>
-            <h4><Link to={"/member/" + member.last_name}>{member.name}</Link></h4>
-            <p>{member.role}, {member.party}</p>
+          <div key={member.id}
+          className={`${member.party==="D"? "dem" : "rep"}`}>
+            <Link to={"/member/" + member.id}>
+            <h4>{member.name}</h4>
+            <p>{member.role}, {member.party}<br />
+            {`${member.district? `District ${member.district}` : " "}`}
+            </p></Link>
           </div>
         )
       });
     return (
         <div className="results-div">
-            <h3>Search Results</h3>
+            <h3>Congress Members</h3>
             <div className="search-results">{resultsList}</div>
         </div>
     )
