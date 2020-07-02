@@ -96,8 +96,6 @@ subcommittees: Array[8]
 
 ## Wireframes
 
-Upload images of wireframe to cloudinary and add the link here with a description of the specific wireframe. Also, define the the React components and the architectural design of your app.
-
 ![Simplified Wireframes](https://i.imgur.com/pcnVlyp.png)
 
 ![React architecture & API Calls](https://i.imgur.com/NXX21Sv.png)
@@ -114,9 +112,7 @@ The functionalities will then be divided into two separate lists: MPV and PostMV
 
 - Allow user to interact with the page with the following:
     - Add a toggle for Sente and House lists
-    - Search bars to filter 
-        - by State Search 
-        - by name
+    - Search bars to filter for both Senate and House
     - Clicking to Rep. details
     - Accessing links to Rep. external pages
         - Rep. website
@@ -145,8 +141,6 @@ The functionalities will then be divided into two separate lists: MPV and PostMV
 - Form (search bar)
 - Search Result
 - Result List
-- Member List - House
-- Member List - Senate
 - Member Details
 
 Post-MVP:
@@ -171,14 +165,12 @@ __
 | --- | :---: |  
 | App | Sets up app with React Router | 
 | Header | Renders the header and Nav | 
-| Footer | Call to Action on Web (crediting ProPublica)|
 | Main | Contains Nav and Switch/Routes |
-| Senate List | Renders full List of Senate Members |
-| House List| Renders full List of House Reps. |
-| Search by State | Form allows users to filter by state |
-| Seach by Name | Renders specific Rep. |
+| Search by State | Form allows users to search by state |
+| Senators | Renders Senate Members by State |
+| House List| Renders full List of House Reps. for each state |
 | Member Details | Renders details for selected Rep. |
-| Options | Option navigate to the next or previous Rep. |
+| Options | Option navigate to the next or previous Rep. -- INC |
 | About Page | Credits API and shares details about it |
 
 
@@ -219,13 +211,77 @@ Unless otherwise noted, time is listed in hours:
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of and a brief description.  Code snippet should not be greater than 10 lines of code.
+Used states to bypass an issue with data type, and useEffect to make the API call when details page loads:
 
 ```js
-// Code snippets go here.
+function MemberDetails(props) {
 
+const [memberDetails, updateMemberDetails]= useState({})
+const [memberRole, setMemberRole]= useState({})
+useEffect(() => {
+    const memberApiCall = async () => {
+      const res = await fetch(`https://api.propublica.org/congress/v1/members/${props.match.params.id}.json`,
+      {
+        dataType: "json",
+        headers: { "X-API-Key": "ZuPHJPB5SdYllQS7KY4cAVoLY6mdboxoc3nZLOcE" }
+      })
+      const json = await res.json()
+      let resultsObject = json.results[0]
+      let role = json.results[0].roles[0]
+      updateMemberDetails(resultsObject)
+      setMemberRole(role)
+    }
+    memberApiCall()
+  }, []); 
+  return (
+      <div className="member-info">
+        <h3 id="member-name">{memberRole.short_title} {memberDetails.first_name} {memberDetails.last_name}</h3>
+        <p>{currentParty(memberDetails.current_party)}<br />
+        In role since: {memberRole.start_date}<br />
+        Next election: {memberRole.next_election}</p>
+      </div>
+    )
+};
 ```
- 
+
+Used states to show/hide details sections:
+
+```js
+    const [billsButton, setBillsButton]= useState('display')
+    const [billsDiv, setBillsDiv]= useState('hidden')
+    const handleShow = () => {
+        console.log('Expanding Bills Section');
+        billsApiCall()
+        setBillsButton('hidden')
+        setBillsDiv('shown')
+    }; 
+    const handleHide = () => {
+        console.log('Hiding Bills Section')
+        setBillsButton('display')
+        setBillsDiv('hidden')
+    };
+    return (
+      <div className="member-bills">
+          <button className={`${billsButton}`} onClick={handleShow}>Show Sponsored Bills</button>
+          <button className={`${billsDiv}`} onClick={handleHide}>Hide Sponsored Bills</button>
+      </div>
+    )
+```
+
+Used ternary to avoid rendering undefined elements:
+
+```js
+{stateResults?
+              <SearchResults {...routerProps} 
+                 stateResults={stateResults}
+                 stateSearch={stateSearch}/>:<h4>{"Please enter a valid two-letter state abbriviation."}</h4>}
+
+(...)
+
+<p className="bill-summary">{bill.summary? `${bill.summary}`:"Bill Summary Unavailable"}</p>
+```
+
+
 © 2020 GitHub, Inc.
 Help
 Support
