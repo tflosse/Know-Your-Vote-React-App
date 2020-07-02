@@ -17,14 +17,10 @@
     font-family: 'Bebas Neue', cursive;
     font-size: 1.1rem;
     padding: 5px 8px;
+    margin: 15px;
     border: none;
     border-radius: 5px;
     -webkit-transition: all 0.5s;
-}
-#submit-search:hover {
-    color: whitesmoke;
-    background-color: rgba(54, 54, 54, 0.705);
-    transition: all 0.4s ease;
 }
 
 .results-div {
@@ -53,16 +49,37 @@
     cursor: pointer;
 }
 
-.dem a:hover, .rep a:hover {
-    font-size: 1.2rem;
+  
+  /* Tablet */
+@media only screen and (min-width: 768px) {
+    .App {
+        font-size: 17px;
+    }
 }
-.dem:hover {
-    background-color: rgba(80, 172, 252, 0.5);
-    font-size: 1.1rem;
-    transition: all 0.4s ease;
-}
-.rep:hover {
-    background-color: rgba(212, 60, 60, 0.5);
-    font-size: 1.1rem;
-    transition: all 0.4s ease;
-}
+  /* Desktop */
+  @media only screen and (min-width: 1024px) {
+    .App {
+      font-size: 18px;
+    }
+    .mobile-breaks {
+        display: none;
+    }
+    #submit-search:hover {
+        color: whitesmoke;
+        background-color: rgba(54, 54, 54, 0.705);
+        transition: all 0.4s ease;
+    }
+    .dem a:hover, .rep a:hover {
+        font-size: 1.2rem;
+    }
+    .dem:hover {
+        background-color: rgba(80, 172, 252, 0.5);
+        font-size: 1.1rem;
+        transition: all 0.4s ease;
+    }
+    .rep:hover {
+        background-color: rgba(212, 60, 60, 0.5);
+        font-size: 1.1rem;
+        transition: all 0.4s ease;
+    }
+  }

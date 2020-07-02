@@ -1,72 +1,116 @@
 .App {
-  margin: 0 auto;
+  box-sizing: border-box;
   height: 100vh;
-  position: relative;
+  margin: 0 auto;
   font-family: 'Poppins', sans-serif;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 nav {
-  box-sizing: border-box;
-  display: flex;
-  position: sticky;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 20px;
   background-color: rgb(238,238,238);
+  height: 70px;
 }
 
-/* .mobile-nav {
+.home-title {
+  margin-left: 10px;
+  position: absolute;
+  padding: 20px;
+  font-size: 1.5rem;
+}
+
+nav button {
+  border: none;
+  font-size: 1.5rem;
+}
+
+nav img {
+  display: none;
+}
+
+.hamburger {
+ position: fixed;
+ font-size: 1.6rem;
+ top: 15px;
+ right: 25px;
+}
+
+.x-button {
+  text-align: right;
+  padding-top: 20px;
+  padding-bottom: 30px;
+  padding-right: 30px;
+}
+
+.displaying {
+  position: absolute;
+}
+
+.hidden {
+  display: none;
+}
+
+nav a, .nav-options {
+  color: black;
+  font-family: 'Bebas Neue', cursive;
+  text-decoration: none;
+  padding: 10px;
+  border-radius: 10px;
+  -webkit-transition: all 0.5s;
+}
+
+.close {
+  display: none;
+  -webkit-transition: all 0.5s;
+}
+
+.open {
   display: flex;
   flex-direction: column;
   width: 100vw;
   height: 100vh;
   transition: left 300ms ease;
-  text-align: right;
   position: fixed;
   top: 0;
-  right: -100vw;
-  background-color: rgba(255,255,255, 0.8);
-  padding: 20px;
-} */
-
-nav img {
-  max-height: 100px;
-  position: absolute;
-  top: 5px;
-  left: 37%;
-  vertical-align: middle;
-  padding: 3px;
-  /* margin: 5px 20px 5px 0; */
-  display: inline-block;
-}
-nav a, .nav-options {
-  color: black;
-  font-family: 'Bebas Neue', cursive;
-  display: inline-block;
+  left: 0;
+  right: 0;
+  background-color: rgb(238,238,238);
+  transition: right 0.5s ease;
   z-index: 10;
-  padding: 3px 12px;
-  font-size: 1.3em;
-  text-decoration: none;
-  border-radius: 10px;
-  -webkit-transition: all 0.5s;
 }
 
-.nav-options:hover {
-  color: whitesmoke;
-  background-color: rgba(54, 54, 54, 0.705);
-  transition: all 0.4 ease;
+.open > .nav-options {
+  font-size: 1.4rem;
+  text-align: right;
+  padding: 30px;
+  padding-top: 15px;
 }
 
-.about-div, .home-div {
-  margin: 30px;
-  margin-top: 70px;
+.home-div, .about-div {
+  margin: 40px 25px;
+}
+
+h4 {
   text-align: center;
+  padding-top: 15px;
 }
+
 .constit-quote {
   font-style: italic;
-  font-size: 0.9rem;;
+  font-size: 0.8rem;
+  margin: 10px 25px;
 }
+
+.home-div p {
+  padding-bottom: 15px;
+}
+
+.home-div a {
+  float: right;
+  transform: translate(-100%);
+  font-size: 1rem;
+  background-color: rgb(238,238,238);
+}
+
 .separator {
   margin-top: 25px;
   margin-bottom: 35px;
@@ -74,6 +118,62 @@ nav a, .nav-options {
   width: 15vw;
 }
 
-h4 {
-  text-align: center;
+/* Tablet */
+@media only screen and (min-width: 768px) {
+  .App {
+    font-size: 16px;
+    margin: 0 auto;
+  }
+  nav img {
+    max-height: 100px;
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translate(-50%);
+    padding: 3px;
+    display: inline-block;
+  }
+  .home-div, .about-div {
+    margin: 70px 40px;
+  }
+  .constit-quote {
+    font-size: 0.9rem;
+  }
+  .home-div a {
+    margin-right: 25%;
+    transform: translate(-95%);
+    font-size: 1.2rem;
+  } 
+}
+
+/* Desktop */
+@media only screen and (min-width: 1024px) {
+  .App {
+    font-size: 17px;
+  }
+  .mobile-nav {
+    display: none;
+  }
+  nav {
+    display: flex;
+    position: sticky;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    background-color: rgb(238,238,238);
+  }
+  nav a, .nav-options {
+    display: inline-block;
+    z-index: 10;
+    padding: 3px 12px;
+    font-size: 1.3em;
+  }
+  .nav-options:hover {
+    color: whitesmoke;
+    background-color: rgba(54, 54, 54, 0.705);
+    transition: all 0.4 ease;
+  }
+  .about-div, .home-div {
+    margin-top: 70px;
+  }
 }

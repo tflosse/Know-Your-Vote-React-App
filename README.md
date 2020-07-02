@@ -11,7 +11,7 @@ This React App aims at using the ProPublica API to allow users and voters to eas
 
 - [Github Repo](https://github.com/tflosse/React-Project)
 
-- [Github Page](https://tflosse.github.io/React-Project/) -- not yet deployed
+- [Github Page](https://tflosse.github.io/React-Project/)
 
 ​
 
@@ -203,11 +203,9 @@ Unless otherwise noted, time is listed in hours:
 
 ## Additional Libraries
 
-- ReactStrap - 
-- Material.io - 
-- Sass - 
-- Framer Motion
-    - Used to make the hamburger menu button fully adaptive by preserving its stroke width and its aspect ratio on active state, based on a Sandbox by [charliecm](https://codesandbox.io/s/hamburger-menu-with-framer-motion-iwxtp?file=/package.json)
+- Styled-Components
+- Framer Motion (attempted for animations but not used)
+    - Hamburger menu button fully adaptive by preserving its stroke width and its aspect ratio on active state, based on a Sandbox by [charliecm](https://codesandbox.io/s/hamburger-menu-with-framer-motion-iwxtp?file=/package.json)
 
 ## Code Snippet
 

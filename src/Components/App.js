@@ -57,33 +57,53 @@ function App() {
       setStateSearch('')
   };
 
+  const [mobileMenu, setMobileMenu]= useState('close')
+  const [hamburger, setHamburger]= useState('displaying')
+
+  const setOpen = () => {
+    console.log('Expanding Mobile Menu');
+    setHamburger('hidden')
+    setMobileMenu('open')
+  }; 
+  const setClose = () => {
+      console.log('Hiding Mobile Menu')
+      setHamburger('displaying')
+      setMobileMenu('close') 
+  };
+
   return (
     <div className="App">
       <nav>
-        <Link to="/">
-          <h1>Know your Vote</h1>
-        </Link>
-        {/* <button 
-          className="mobile-nav hamburger" 
-          onClick={() => setOpen(!isOpen)}>
-          ☵</button>
-        <button className="mobile-nav close">X</button> */}        
-        <Link to="/senate" 
-        className="dropdown-item nav-options"
-        id="nav-search">
-          Senate 
+        <Link to="/" 
+        className="home-title">
+          Know your Vote
         </Link>
         <img src="https://i.imgur.com/2GuvUqT.png" alt="Congress Illustration"/>
-        <Link to="/house" 
-        className="dropdown-item nav-options"
-        id="nav-search">
-          House
-        </Link>
-        <Link to="/about" 
-        className="dropdown-item nav-options"
-        id="nav-about">
-          About
-        </Link>
+        <button 
+          className={`${hamburger} mobile-nav hamburger`} 
+          onClick={setOpen}>
+          ☵</button>
+        <div className={`${mobileMenu} sticky-nav`}>  
+          <button className="mobile-nav x-button" onClick={setClose}>X</button>  
+          <Link to="/senate" 
+          className="nav-options"
+          id="nav-search"
+          onClick={setClose}>
+            Senate 
+          </Link>
+          <Link to="/house" 
+          className="nav-options"
+          id="nav-search"
+          onClick={setClose}>
+            House
+          </Link>
+          <Link to="/about" 
+          className="nav-options"
+          id="nav-about"
+          onClick={setClose}>
+            About
+          </Link>
+        </div> 
       </nav>
       <main>
         <Switch>

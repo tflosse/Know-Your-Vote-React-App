@@ -18,7 +18,6 @@ function SearchResults(props) {
       });
     return (
         <div className="results-div">
-            <h3>Congress Members</h3>
             <div className="search-results">{resultsList}</div>
         </div>
     )
