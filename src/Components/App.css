@@ -106,7 +106,7 @@ h4 {
 
 .home-div a {
   float: right;
-  transform: translate(-100%);
+  transform: translate(-95%);
   font-size: 1rem;
   background-color: rgb(238,238,238);
 }
@@ -149,10 +149,24 @@ h4 {
 /* Desktop */
 @media only screen and (min-width: 1024px) {
   .App {
-    font-size: 17px;
+    font-size: 16px;
   }
-  .mobile-nav {
+  /* .mobile-nav {
     display: none;
+  } */
+  .open {
+    display: flex;
+    flex-direction: column;
+    width: 25vw;
+    height: 100vh;
+    transition: left 300ms ease;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 75%;
+    background-color: rgb(238,238,238);
+    transition: right 0.5s ease;
+    z-index: 10;
   }
   nav {
     display: flex;

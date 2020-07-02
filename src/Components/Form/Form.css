@@ -23,12 +23,7 @@
     -webkit-transition: all 0.5s;
 }
 
-.results-div {
-    text-align: center;
-    margin-top: 60px;
-}
 .search-results {
-    text-align: center;
     display: flex;
     flex-wrap: wrap;
     overflow-y: scroll;
@@ -36,13 +31,28 @@
     justify-content: space-evenly;
 }
 
+.search-results h4 {
+    text-align: left;
+    padding-top: 0px;
+}
+
 .dem, .rep {
-    width: 30vw;
-    padding: 10px 25px;
-    margin: 5px;
+    width: 40vw;
+    text-align: left;
+    padding: 5px 30px;
+    margin: 10px auto;
     border-radius: 5px;
     -webkit-transition: all 0.5s;
 }
+
+.dem {
+    background-color: rgba(80, 172, 252, 0.3);
+}
+
+.rep {
+    background-color: rgba(212, 60, 60, 0.3);
+}
+
 .dem a , .rep a {
     color: black;
     text-decoration: none;
@@ -55,11 +65,25 @@
     .App {
         font-size: 17px;
     }
+    #submit-search {
+        font-family: 'Bebas Neue', cursive;
+        font-size: 1.3rem;
+    }
+    .results-div {
+        margin-top: 60px;
+    }
+    .dem, .rep {
+        width: 30vw;
+        text-align: left;
+        padding: 10px 25px;
+        margin: 15px auto;
+        -webkit-transition: all 0.5s;
+    }
 }
   /* Desktop */
   @media only screen and (min-width: 1024px) {
     .App {
-      font-size: 18px;
+      font-size: 17px;
     }
     .mobile-breaks {
         display: none;
@@ -68,6 +92,14 @@
         color: whitesmoke;
         background-color: rgba(54, 54, 54, 0.705);
         transition: all 0.4s ease;
+    }
+    .dem, .rep {
+        background-color: transparent;
+        text-align: center;
+    }
+    .search-results h4 {
+        text-align: center;
+        padding-top: 0px;
     }
     .dem a:hover, .rep a:hover {
         font-size: 1.2rem;

@@ -87,7 +87,7 @@
   /* Desktop */
   @media only screen and (min-width: 1024px) {
     .App {
-      font-size: 18px;
+      font-size: 17px;
     }
     .member-bills button:hover {
         color: whitesmoke;
