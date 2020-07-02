@@ -190,24 +190,23 @@ Unless otherwise noted, time is listed in hours:
 | --- | :---: |  :---: | :---: | :---: |
 | Create React app and install all dependencies| H | 1 | 20min | 20min |
 | Set up React structure and components | H | 1 | 1 | 1 |
-| Set up Navbar, Main Skeleton and Routes| H | 1.5 |  |  |
+| Set up Navbar, Main Skeleton and Routes| H | 1.5 | 2 | 2 |
 | Research API resources | H | 2 | 3 | 3 |
-| Make API calls and inspect data structures | H | 1 | 2 | 2 |
-| Render lists, set up onToggle | H | 2 |  |  |
-| Style the lists and buttons | H | 1 |  |  |
-| Buttons for Individuals, onClick | H | 2 |  |  |
-| Render individual info on separate route | M | 3 |  |  |
+| Make API calls and inspect data structures | H | 1 | 2.5 | 2.5 |
+| Render lists, set up Hide/Show | H | 2 | 3 | 3 |
+| Style the lists and buttons | H | 1 | 0.5 | 0.5 |
+| Buttons for Individuals, onClick | H | 2 | 1 | 1 |
+| Render individual info on separate route | M | 3 | 2 | 2 |
 | Conditional logic for displaying external links | M | 2 |  |  |
 | Style the individual pages | H | 1 |  |  |
-| Search by State, onChange, onSubmit | H | 2 |  |  |
-| Search by State, onChange, onSubmit | H | 2 |  |  |
-| Render Search Results | H | 4 |  |  |
-| Add content for About page | M | 30min |  |  |
-| Create sharing links and pop-up | L | ? |  |  |
-| User Form on Homepage | L | ? |  |  |
-| Render list of Sponsored Bills | L | 3 |  |  |
-| Additional features (progress bar, etc.) | L | 4 |  |  |
-| Additional styling | L | 4 |  |  |
+| Search by State, onChange, onSubmit | H | 2 | 3 | 3 |
+| Render Search Results | H | 4 | 4 | 4 |
+| Add content for About page | M | 30min | 15min | 15min |
+| Create sharing links | L | ? | INC | INC |
+| User Form on Homepage | L | ? | INC | INC |
+| Render list of Sponsored Bills | L | 3 | 3 | 2 |
+| Additional features (progress bar, etc.) | L | 4 | INC | INC |
+| Additional styling & Media Queries | L | 4 |  |  |
 | Total | H | 40 | 6.3 | 6.3 |
 
 ## Additional Libraries
