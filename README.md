@@ -180,7 +180,7 @@ Unless otherwise noted, time is listed in hours:
 
 | Component | Priority | Estimated Time | Time Invetsted | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Create React app and install all dependencies| H | 1 | 20min | 20min |
+| Create React app and install all dependencies| H | 1 | 30min | 30min |
 | Set up React structure and components | H | 1 | 1 | 1 |
 | Set up Navbar, Main Skeleton and Routes| H | 1.5 | 2 | 2 |
 | Research API resources | H | 2 | 3 | 3 |
@@ -188,18 +188,18 @@ Unless otherwise noted, time is listed in hours:
 | Render lists, set up Hide/Show | H | 2 | 3 | 3 |
 | Style the lists and buttons | H | 1 | 0.5 | 0.5 |
 | Buttons for Individuals, onClick | H | 2 | 1 | 1 |
-| Render individual info on separate route | M | 3 | 2 | 2 |
+| Render individual info on separate route | M | 3 | 3 | 3 |
 | Conditional logic for displaying external links | M | 2 | INC | INC |
 | Style the individual pages | H | 1 | 1 | 1 |
 | Search by State, onChange, onSubmit | H | 2 | 3 | 3 |
 | Render Search Results | H | 4 | 4 | 4 |
-| Add content for About page | M | 30min | 15min | 15min |
+| Add content for About page | M | 30min | 30min | 30min |
 | Create sharing links | L | ? | INC | INC |
 | User Form on Homepage | L | ? | INC | INC |
 | Render list of Sponsored Bills | L | 3 | 2 | 2 |
 | Additional features (progress bar, etc.) | L | 4 | INC | INC |
 | Additional styling & Media Queries | L | 4 | 3 | 3 |
-| Total | H | 40 |  |  |
+| Total | H | 35 | 30 | 30 |
 
 ## Additional Libraries
 
@@ -279,12 +279,3 @@ Used ternary to avoid rendering undefined elements:
 <p className="bill-summary">{bill.summary? `${bill.summary}`:"Bill Summary Unavailable"}</p>
 ```
 
-
-© 2020 GitHub, Inc.
-Help
-Support
-API
-Training
-Blog
-About
-GitHub Enterprise Server 2.20.1
